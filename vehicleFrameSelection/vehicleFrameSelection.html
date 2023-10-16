@@ -1,0 +1,25 @@
+<template>
+    <lightning-card title="Vehicle Frame Selection">
+      <template if:true={vehicleFrames} title='vehicleFrames'>
+        <div>
+            <lightning-datatable
+                    key-field="id"
+                    data={vehicleFrames}
+                    columns={columns}> 
+             </lightning-datatable> 
+        </div>
+      </template>
+         <template if:false={vehicleFrames}>   
+        No vehicle frames found.
+      </template>
+
+      <div class="slds-m-top_medium">
+        <lightning-button
+          variant="brand"
+          label="Link Selection"
+          title="Link Selection"
+          onclick={linkSelection}
+        ></lightning-button>
+      </div>
+    </lightning-card>
+  </template>
